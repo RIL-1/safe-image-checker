@@ -27,6 +27,9 @@ async def classify_images(image_paths: List[str]):
         results = {}
         for image_path in image_paths:
             # Ajouter le préfixe /data/images
+            if not image_path.startswith("/"):
+                image_path = "/" + image_path
+
             full_path = f"/data/images{image_path}"
             image_file = Path(full_path)
             
