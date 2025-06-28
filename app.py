@@ -46,7 +46,7 @@ async def classify_images(image_paths: List[str]):
             # Simuler les probabilités safe/unsafe
             unsafe_score = 0.0
             for detection in detections:
-                if detection['class'] in ['FEMALE_GENITALIA_EXPOSED', 'BUTTOCKS_EXPOSED', 'FEMALE_BREAST_EXPOSED', 'MALE_BREAST_EXPOSED','ANUS_EXPOSED','MALE_GENITALIA_EXPOSED']:
+                if detection['class'] in ['FEET_COVERED','FEMALE_GENITALIA_EXPOSED', 'BUTTOCKS_EXPOSED', 'FEMALE_BREAST_EXPOSED', 'MALE_BREAST_EXPOSED','ANUS_EXPOSED','MALE_GENITALIA_EXPOSED']:
                     unsafe_score = max(unsafe_score, detection['score'])
             
             results[image_path] = {
