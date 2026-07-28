@@ -1,3 +1,0 @@
-## Commande de build
-
-docker build -t safe-image-checker .
