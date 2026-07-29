@@ -1,5 +1,13 @@
 # Safe Image Checker
 
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.9-blue?logo=python" alt="Python 3.9">
+  <img src="https://img.shields.io/badge/FastAPI-0.115.0-009688?logo=fastapi" alt="FastAPI 0.115.0">
+  <img src="https://img.shields.io/badge/NudeNet-3.0.2-purple" alt="NudeNet 3.0.2">
+  <img src="https://img.shields.io/badge/Docker-ready-2496ED?logo=docker" alt="Docker ready">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
+</p>
+
 Microservice HTTP qui analyse des images et les classe comme **safe** ou **unsafe** à l'aide de [NudeNet](https://github.com/notAI-tech/NudeNet).
 
 ## Fonctionnement
@@ -123,6 +131,12 @@ Le score **safe** vaut `1.0 - unsafe`.
 | FastAPI | 0.115.0 |
 | Uvicorn | 0.32.0 |
 | NudeNet | 3.0.2 |
+
+## Sécurité & architecture
+
+Ce service est conçu pour être utilisé **uniquement en interne** dans une infrastructure Docker et n'embarque **aucun mécanisme d'authentification**.
+
+Dans mon architecture, il est exposé via un réseau Docker interne, avec l'authentification, le rate-limiting et le TLS gérés en amont par un reverse proxy.
 
 ## Limitations
 
